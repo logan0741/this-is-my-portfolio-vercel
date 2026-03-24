@@ -95,28 +95,6 @@ export default function HomePage() {
               </span>
             </GlassButton>
           </Link>
-
-          {!isVercel && (
-            <Link href="/admin">
-              <GlassButton className="text-base px-8 py-3.5">
-                <span className="flex items-center gap-2">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 5v14M5 12h14" />
-                  </svg>
-                  내용 추가하기
-                </span>
-              </GlassButton>
-            </Link>
-          )}
         </motion.div>
       </motion.div>
 

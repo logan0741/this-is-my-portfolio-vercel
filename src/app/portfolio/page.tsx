@@ -209,30 +209,37 @@ export default function PortfolioPage() {
                 </div>
               )}
 
-              {activities.length === 0 && (
-                <div className="glass p-12 text-center mt-8">
-                  <p className="text-[var(--text-tertiary)] text-lg mb-2">
-                    아직 등록된 활동이 없습니다
-                  </p>
-                  <p className="text-[var(--text-tertiary)] text-sm mb-6">
-                    "내용 추가하기"를 눌러 활동을 추가해보세요.
-                  </p>
-                  <Link href="/admin">
-                    <GlassButton variant="primary">추가하러 가기</GlassButton>
-                  </Link>
-                </div>
-              )}
+              {/* Removed empty activities block as data is static in Vercel */}
             </main>
 
             {/* Sidebar */}
-            <StatsSidebar
-              stats={stats}
-              contextLabel={
-                selectedContext.length < activities.length
-                  ? "선택된 폴더"
-                  : "전체"
-              }
-            />
+            <div className="flex flex-col gap-4">
+              <AnimatePresence>
+                {selectedContext.length < activities.length && (
+                  <motion.button
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    onClick={() => setSelectedContext(activities)}
+                    className="text-xs text-[var(--text-secondary)] hover:text-[#ffd700] self-end flex items-center gap-1.5 transition-colors bg-[rgba(255,255,255,0.05)] px-3 py-1.5 rounded-full border border-[rgba(255,255,255,0.1)]"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
+                    </svg>
+                    전체 통계 및 증빙 보기
+                  </motion.button>
+                )}
+              </AnimatePresence>
+              
+              <StatsSidebar
+                stats={stats}
+                contextLabel={
+                  selectedContext.length < activities.length
+                    ? "선택된 폴더"
+                    : "전체"
+                }
+              />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

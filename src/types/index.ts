@@ -40,4 +40,5 @@ export interface PortfolioStats {
   totalAwards: number;
   roleDistribution: Record<string, number>;
   githubLinks: { title: string; url: string }[];
+  proofFiles: { url: string; title: string; isCert: boolean }[];
 }

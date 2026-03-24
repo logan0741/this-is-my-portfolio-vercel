@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { PortfolioStats } from "@/types";
+import QuickLookModal from "./QuickLookModal";
+import Image from "next/image";
 
 interface StatsSidebarProps {
   stats: PortfolioStats;
@@ -9,13 +12,15 @@ interface StatsSidebarProps {
 }
 
 export default function StatsSidebar({ stats, contextLabel }: StatsSidebarProps) {
+  const [quickLookImage, setQuickLookImage] = useState<string | null>(null);
   const sortedRoles = Object.entries(stats.roleDistribution).sort(
     ([, a], [, b]) => b - a
   );
 
   return (
-    <motion.aside
-      className="w-full lg:w-80 flex-shrink-0 space-y-4"
+    <>
+      <motion.aside
+        className="w-full lg:w-80 flex-shrink-0 space-y-4"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
@@ -122,6 +127,48 @@ export default function StatsSidebar({ stats, contextLabel }: StatsSidebarProps)
           </div>
         </div>
       )}
-    </motion.aside>
+
+      {/* Proof files (Certificates and Images) */}
+      {stats.proofFiles.length > 0 && (
+        <div className="stats-card">
+          <h3 className="text-sm font-semibold text-[var(--text-primary)] mb-3">
+            증빙 서류 및 첨부 자료
+          </h3>
+          <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-4 gap-2">
+            {stats.proofFiles.map((proof, i) => (
+              <div
+                key={i}
+                className={`relative aspect-square rounded-lg overflow-hidden border cursor-pointer hover:scale-110 transition-transform ${
+                  proof.isCert ? "border-[rgba(255,214,0,0.2)] hover:border-[rgba(255,214,0,0.5)]" : "border-[rgba(255,255,255,0.1)] hover:border-[rgba(102,126,234,0.5)]"
+                }`}
+                onClick={() => setQuickLookImage(proof.url)}
+                title={proof.title}
+              >
+                <Image
+                  src={proof.url}
+                  alt={proof.title}
+                  fill
+                  className="object-cover"
+                />
+                {proof.isCert && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.3)]">
+                    <span className="text-[10px]">📄</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      </motion.aside>
+
+      {/* Quick Look Modal */}
+      {quickLookImage && (
+        <QuickLookModal
+          imageSrc={quickLookImage}
+          onClose={() => setQuickLookImage(null)}
+        />
+      )}
+    </>
   );
 }

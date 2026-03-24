@@ -71,6 +71,7 @@ export function groupByCategory(activities: Activity[]): CategoryGroup[] {
 export function computeStats(activities: Activity[]): PortfolioStats {
   const roleDistribution: Record<string, number> = {};
   const githubLinks: { title: string; url: string }[] = [];
+  const proofFiles: { url: string; title: string; isCert: boolean }[] = [];
   let totalAwards = 0;
 
   activities.forEach((a) => {
@@ -81,6 +82,8 @@ export function computeStats(activities: Activity[]): PortfolioStats {
     if (a.github_url) {
       githubLinks.push({ title: a.title, url: a.github_url });
     }
+    a.images.forEach(img => proofFiles.push({ url: img, title: a.title, isCert: false }));
+    a.certificates.forEach(cert => proofFiles.push({ url: cert, title: a.title, isCert: true }));
   });
 
   return {
@@ -88,6 +91,7 @@ export function computeStats(activities: Activity[]): PortfolioStats {
     totalAwards,
     roleDistribution,
     githubLinks,
+    proofFiles,
   };
 }
 
