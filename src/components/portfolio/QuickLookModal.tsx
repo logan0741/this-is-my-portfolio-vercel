@@ -65,15 +65,23 @@ export default function QuickLookModal({
           </svg>
         </button>
 
-        {/* Image container */}
+        {/* Media container */}
         <div className="relative w-full h-[70vh] glass overflow-hidden">
-          <Image
-            src={imageSrc}
-            alt="Quick Look"
-            fill
-            className="object-contain p-4"
-            sizes="(max-width: 768px) 100vw, 80vw"
-          />
+          {imageSrc.toLowerCase().endsWith('.pdf') ? (
+            <iframe
+              src={imageSrc}
+              className="w-full h-full rounded-lg p-2"
+              title="PDF Preview"
+            />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt="Quick Look"
+              fill
+              className="object-contain p-4"
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+          )}
         </div>
 
         {/* Filename */}

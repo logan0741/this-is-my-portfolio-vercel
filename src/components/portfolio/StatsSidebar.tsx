@@ -144,13 +144,19 @@ export default function StatsSidebar({ stats, contextLabel }: StatsSidebarProps)
                 onClick={() => setQuickLookImage(proof.url)}
                 title={proof.title}
               >
-                <Image
-                  src={proof.url}
-                  alt={proof.title}
-                  fill
-                  className="object-cover"
-                />
-                {proof.isCert && (
+                {proof.url.toLowerCase().endsWith('.pdf') ? (
+                  <div className="absolute inset-0 bg-[rgba(255,255,255,0.05)] flex items-center justify-center">
+                    <span className="text-2xl">📄</span>
+                  </div>
+                ) : (
+                  <Image
+                    src={proof.url}
+                    alt={proof.title}
+                    fill
+                    className="object-cover"
+                  />
+                )}
+                {proof.isCert && !proof.url.toLowerCase().endsWith('.pdf') && (
                   <div className="absolute inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.3)]">
                     <span className="text-[10px]">📄</span>
                   </div>
