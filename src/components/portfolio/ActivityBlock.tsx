@@ -2,27 +2,63 @@
 
 import { Activity } from "@/types";
 import { parseGithubName } from "@/lib/data";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ActivityBlockProps {
   activity: Activity;
 }
 
 export default function ActivityBlock({ activity }: ActivityBlockProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <>
-      <div className="activity-block relative group">
+      <div
+        className="activity-block relative group cursor-pointer"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
         {/* Top row: title + award */}
         <div className="flex items-start justify-between mb-3">
-          <h3 className="font-semibold text-[var(--text-primary)] text-sm leading-snug pr-4">
-            {activity.title}
-          </h3>
+          <div className="flex items-center gap-2">
+            <motion.svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--text-tertiary)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              animate={{ rotate: isExpanded ? 90 : 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <path d="M9 18l6-6-6-6" />
+            </motion.svg>
+            <h3 className="font-semibold text-[var(--text-primary)] text-sm leading-snug pr-4">
+              {activity.title}
+            </h3>
+          </div>
           {activity.is_awarded && activity.award_title && (
             <span className="award-badge flex-shrink-0">
               🏆 {activity.award_title}
             </span>
           )}
         </div>
+
+        {/* Tech Stack Tags */}
+        {activity.tech_stack && activity.tech_stack.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {activity.tech_stack.map((tech) => (
+              <span
+                key={tech}
+                className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-[rgba(102,126,234,0.12)] text-[rgba(147,168,255,0.9)] border border-[rgba(102,126,234,0.2)]"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
 
         {/* Roles */}
         <div className="flex flex-wrap gap-1.5 mb-3">
@@ -33,16 +69,16 @@ export default function ActivityBlock({ activity }: ActivityBlockProps) {
           ))}
         </div>
 
-        {/* Bottom row: github + thumbnails */}
+        {/* Bottom row: github */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* GitHub link */}
             {activity.github_url && (
               <a
                 href={activity.github_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                onClick={(e) => e.stopPropagation()}
               >
                 <svg
                   width="14"
@@ -58,14 +94,71 @@ export default function ActivityBlock({ activity }: ActivityBlockProps) {
               </a>
             )}
           </div>
+
+          {/* Expand hint */}
+          <span className="text-[10px] text-[var(--text-tertiary)] opacity-0 group-hover:opacity-100 transition-opacity">
+            {isExpanded ? "접기" : "자세히 보기"}
+          </span>
         </div>
 
-        {/* Reflection preview (collapsed) */}
-        {activity.reflection && (
+        {/* Description preview (always visible, collapsed) */}
+        {!isExpanded && activity.description && (
           <p className="mt-3 text-xs text-[var(--text-tertiary)] line-clamp-2 leading-relaxed">
-            {activity.reflection}
+            {activity.description}
           </p>
         )}
+
+        {/* Expanded Detail Section */}
+        <AnimatePresence>
+          {isExpanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{
+                height: "auto",
+                opacity: 1,
+                transition: {
+                  height: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
+                  opacity: { duration: 0.25, delay: 0.1 },
+                },
+              }}
+              exit={{
+                height: 0,
+                opacity: 0,
+                transition: {
+                  height: { duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] },
+                  opacity: { duration: 0.15 },
+                },
+              }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 pt-4 border-t border-[rgba(255,255,255,0.06)] space-y-4">
+                {/* Description */}
+                {activity.description && (
+                  <div>
+                    <h4 className="text-[11px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
+                      📋 프로젝트 설명
+                    </h4>
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                      {activity.description}
+                    </p>
+                  </div>
+                )}
+
+                {/* Reflection */}
+                {activity.reflection && (
+                  <div>
+                    <h4 className="text-[11px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
+                      💭 느낀점
+                    </h4>
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                      {activity.reflection}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );

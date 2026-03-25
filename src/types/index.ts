@@ -5,7 +5,9 @@ export interface Activity {
   term: string;
   category: string;
   roles: string[];
+  tech_stack: string[];
   title: string;
+  description: string;
   is_awarded: boolean;
   award_title: string | null;
   github_url: string | null;
