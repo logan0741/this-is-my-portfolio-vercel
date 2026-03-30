@@ -4,25 +4,30 @@ import {
   TermGroup,
   CategoryGroup,
   PortfolioStats,
+  PortfolioData,
+  YearPositions,
 } from "@/types";
 
 const TERM_ORDER = ["1학기", "여름방학", "2학기", "겨울방학"];
 
-export async function fetchActivities(): Promise<Activity[]> {
-  const isVercel = process.env.NEXT_PUBLIC_IS_VERCEL === "true";
+export async function fetchPortfolioData(): Promise<PortfolioData> {
+  const res = await fetch("/data.json");
+  if (!res.ok) throw new Error("Failed to fetch data.json");
+  return res.json();
+}
 
-  if (isVercel) {
-    const res = await fetch("/data.json");
-    if (!res.ok) throw new Error("Failed to fetch data.json");
-    return res.json();
-  }
+export function getActivityById(
+  activities: Activity[],
+  id: string
+): Activity | undefined {
+  return activities.find((a) => a.id === id);
+}
 
-  // Phase 2/3: Fetch from backend API
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-  const res = await fetch(`${apiUrl}/api/portfolio`);
-  if (!res.ok) throw new Error("Failed to fetch from API");
-  const data = await res.json();
-  return data;
+export function getPositionsByYear(
+  positions: YearPositions[],
+  year: number
+): YearPositions | undefined {
+  return positions.find((p) => p.year === year);
 }
 
 export function groupByDate(activities: Activity[]): YearGroup[] {
@@ -36,7 +41,7 @@ export function groupByDate(activities: Activity[]): YearGroup[] {
   });
 
   return Array.from(yearMap.entries())
-    .sort(([a], [b]) => b - a) // 최신 년도 먼저
+    .sort(([a], [b]) => b - a)
     .map(([year, termMap]) => ({
       year,
       terms: Array.from(termMap.entries())
@@ -61,7 +66,7 @@ export function groupByCategory(activities: Activity[]): CategoryGroup[] {
   });
 
   return Array.from(catMap.entries())
-    .sort(([, a], [, b]) => b.length - a.length) // 활동 많은 카테고리 먼저
+    .sort(([, a], [, b]) => b.length - a.length)
     .map(([category, activities]) => ({
       category,
       activities,
@@ -82,8 +87,12 @@ export function computeStats(activities: Activity[]): PortfolioStats {
     if (a.github_url) {
       githubLinks.push({ title: a.title, url: a.github_url });
     }
-    a.images.forEach(img => proofFiles.push({ url: img, title: a.title, isCert: false }));
-    a.certificates.forEach(cert => proofFiles.push({ url: cert, title: a.title, isCert: true }));
+    a.images.forEach((img) =>
+      proofFiles.push({ url: img, title: a.title, isCert: false })
+    );
+    a.certificates.forEach((cert) =>
+      proofFiles.push({ url: cert, title: a.title, isCert: true })
+    );
   });
 
   return {

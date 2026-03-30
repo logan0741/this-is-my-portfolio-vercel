@@ -3,17 +3,17 @@
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { Activity, ViewMode } from "@/types";
-import { groupByDate, groupByCategory, computeStats } from "@/lib/data";
+import { Activity, ViewMode, YearPositions } from "@/types";
+import { fetchPortfolioData, groupByDate, groupByCategory, computeStats } from "@/lib/data";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
 import FolderAccordion from "@/components/portfolio/FolderAccordion";
 import StatsSidebar from "@/components/portfolio/StatsSidebar";
 import RealisticFolder from "@/components/portfolio/RealisticFolder";
-import GlassButton from "@/components/ui/GlassButton";
 
 export default function PortfolioPage() {
   const [activities, setActivities] = useState<Activity[]>([]);
+  const [positions, setPositions] = useState<YearPositions[]>([]);
+  
   // Initially null to show the 2 realistic folders selection screen
   const [viewMode, setViewMode] = useState<ViewMode>(null);
   const [selectedContext, setSelectedContext] = useState<Activity[]>([]);
@@ -21,11 +21,11 @@ export default function PortfolioPage() {
   const router = useRouter();
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((res) => res.json())
-      .then((data: Activity[]) => {
-        setActivities(data);
-        setSelectedContext(data);
+    fetchPortfolioData()
+      .then((data) => {
+        setActivities(data.activities);
+        setPositions(data.positions || []);
+        setSelectedContext(data.activities);
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -177,6 +177,7 @@ export default function PortfolioPage() {
                       label={`${yearGroup.year}년`}
                       sublabel={`${yearGroup.terms.reduce((sum, t) => sum + t.activities.length, 0)}개 활동`}
                       activities={yearGroup.terms.flatMap((t) => t.activities)}
+                      positions={positions.find((p) => p.year === yearGroup.year)?.items}
                       onSelectActivities={setSelectedContext}
                       depth={0}
                     >
@@ -208,8 +209,6 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               )}
-
-              {/* Removed empty activities block as data is static in Vercel */}
             </main>
 
             {/* Sidebar */}

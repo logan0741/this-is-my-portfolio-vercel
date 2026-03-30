@@ -2,13 +2,14 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Activity } from "@/types";
+import { Activity, Position } from "@/types";
 import ActivityBlock from "./ActivityBlock";
 
 interface FolderAccordionProps {
   label: string;
   sublabel?: string;
   activities: Activity[];
+  positions?: Position[];
   children?: React.ReactNode;
   defaultOpen?: boolean;
   depth?: number;
@@ -19,6 +20,7 @@ export default function FolderAccordion({
   label,
   sublabel,
   activities,
+  positions,
   children,
   defaultOpen = false,
   depth = 0,
@@ -126,7 +128,33 @@ export default function FolderAccordion({
             }}
             className="overflow-hidden"
           >
-            <div className="pt-2 pl-2 border-l-2 border-[rgba(102,126,234,0.15)] ml-5">
+            <div className="pt-2 pl-2 border-l-2 border-[rgba(102,126,234,0.15)] ml-5 mt-2">
+              
+              {/* Positions rendering (직책 UI) */}
+              {positions && positions.length > 0 && (
+                <div className="mb-4 space-y-2 mt-2 mr-2">
+                  <h4 className="text-[11px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider mb-2 flex items-center gap-1.5 pl-1">
+                    <span>🎖️</span> 해당 연도 주요 지책 및 가입 동아리
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {positions.map((pos, idx) => (
+                      <div key={idx} className="position-badge rounded-lg border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.03)] p-3">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="font-semibold text-[var(--accent-blue)] text-sm">{pos.role}</span>
+                          <span className="text-[var(--text-secondary)] text-xs border-l border-[rgba(255,255,255,0.1)] pl-2">{pos.org}</span>
+                        </div>
+                        {pos.description && (
+                          <p className="text-[var(--text-tertiary)] text-[11px] leading-relaxed">
+                            {pos.description}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Children or Activities */}
               {children ||
                 activities.map((activity, i) => (
                   <motion.div

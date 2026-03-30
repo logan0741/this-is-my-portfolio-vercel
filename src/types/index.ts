@@ -1,4 +1,11 @@
 // 통일 데이터 스키마 - JSON & DB 공용
+
+export interface DetailSection {
+  heading: string;
+  content: string;
+  images?: string[];
+}
+
 export interface Activity {
   id: string;
   year: number;
@@ -15,6 +22,23 @@ export interface Activity {
   reflection: string;
   images: string[];
   certificates: string[];
+  detail_sections?: DetailSection[];
+}
+
+export interface Position {
+  role: string;
+  org: string;
+  description?: string;
+}
+
+export interface YearPositions {
+  year: number;
+  items: Position[];
+}
+
+export interface PortfolioData {
+  activities: Activity[];
+  positions: YearPositions[];
 }
 
 export type ViewMode = "date" | "purpose" | null;

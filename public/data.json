@@ -1,189 +1,317 @@
-[
-  {
-    "id": "1d8b1e4e-9d29-4e7a-b50a-42c15f9e2f41",
-    "year": 2025,
-    "term": "겨울방학",
-    "category": "캠프",
-    "roles": ["Android Developer", "Backend Developer"],
-    "tech_stack": ["Kotlin", "Jetpack Compose", "FastAPI", "MySQL", "PyTorch", "Playwright", "Glide", "Retrofit2"],
-    "title": "몰입캠프 1주차 - 밈포티 (MemeForty)",
-    "description": "밈 콘텐츠를 자동으로 수집하고 출석체크, 3컷 만화 등의 기능을 제공하는 안드로이드 앱. Playwright 기반 크롤링과 ResNet50 AI 중복 제거 파이프라인을 포함한 풀스택 프로젝트.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": "https://github.com/logan0741/madcamp-week1",
-    "readme_content": null,
-    "reflection": "1주일이라는 짧은 시간 동안 Kotlin/Jetpack Compose로 안드로이드 앱을 개발하고, FastAPI + MySQL 백엔드에서 Playwright 크롤링과 PyTorch(ResNet50) 기반 AI 중복 제거 파이프라인까지 구축했습니다. 팀 협업과 빠른 프로토타이핑의 중요성을 체감한 프로젝트였습니다.",
-    "images": [],
-    "certificates": []
-  },
-  {
-    "id": "2d8b1e4e-9d29-4e7a-b50a-42c15f9e2f42",
-    "year": 2025,
-    "term": "겨울방학",
-    "category": "캠프",
-    "roles": ["AI Developer", "Backend Developer"],
-    "tech_stack": ["Qwen2-VL", "QLoRA", "LoRA", "FastAPI", "Docker", "Python"],
-    "title": "몰입캠프 2주차 - BlockPass (AI OCR 계약서 분석)",
-    "description": "한국어 계약서를 OCR로 읽어 구조화된 JSON으로 변환하는 AI 서비스. Qwen2-VL 모델을 QLoRA로 파인튜닝하고, 규칙 기반 후처리로 금액/기간/환불 규정을 자동 추출.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": "https://github.com/logan0741/blockpass-AI",
-    "readme_content": null,
-    "reflection": "Qwen2-VL 기반 OCR 모델을 QLoRA(4bit)로 경량 파인튜닝하여 한국어 계약서 인식 정확도를 크게 높였습니다. 키워드 가중치 기반 섹션 분류와 정규식 파싱을 결합한 후처리 파이프라인을 설계하며 NLP와 문서 구조화에 대한 깊은 이해를 얻었습니다. (Backend Repo: github.com/logan0741/blockpass-back)",
-    "images": [],
-    "certificates": []
-  },
-  {
-    "id": "3d8b1e4e-9d29-4e7a-b50a-42c15f9e2f43",
-    "year": 2025,
-    "term": "겨울방학",
-    "category": "캠프",
-    "roles": ["Frontend Developer", "Backend Developer"],
-    "tech_stack": ["Next.js 14", "TypeScript", "FastAPI", "SQLite", "Playwright", "Unity WebGL", "Docker", "Recharts", "Zustand"],
-    "title": "몰입캠프 3주차 - Musinsa Price Tracker & 3D Virtual Try-On",
-    "description": "무신사 상품 가격 변동 추적 및 3D 가상 피팅 서비스. TTS 음성 가이드 온보딩, AI 아바타 자동 생성, Unity WebGL 3D 뷰어를 탑재한 풀스택 웹 앱.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": "https://github.com/logan0741/MadCamp_3week",
-    "readme_content": null,
-    "reflection": "Next.js 14와 FastAPI를 결합한 풀스택 아키텍처를 Docker Compose로 통합 배포했습니다. Playwright를 활용한 무신사 크롤링, Recharts 기반 가격 그래프, Unity WebGL 3D 아바타 뷰어 등 다양한 기술을 한 프로젝트에 녹여내며 기술적 폭을 넓힐 수 있었습니다.",
-    "images": [],
-    "certificates": []
-  },
-  {
-    "id": "4d8b1e4e-9d29-4e7a-b50a-42c15f9e2f44",
-    "year": 2025,
-    "term": "겨울방학",
-    "category": "캠프",
-    "roles": ["Full Stack Developer"],
-    "tech_stack": [],
-    "title": "몰입캠프 4주차 최종 프로젝트",
-    "description": "몰입캠프 마지막 주차에 진행한 최종 팀 프로젝트.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": "https://github.com/logan0741/25w_madcamp_4w",
-    "readme_content": null,
-    "reflection": "4주간의 몰입캠프를 통해 축적한 지식을 총동원하여 기획부터 배포까지 전 과정을 경험한 최종 프로젝트입니다.",
-    "images": [],
-    "certificates": []
-  },
-  {
-    "id": "5d8b1e4e-9d29-4e7a-b50a-42c15f9e2f45",
-    "year": 2024,
-    "term": "2학기",
-    "category": "대회",
-    "roles": ["Data Analyst", "Presenter"],
-    "tech_stack": ["Python", "Pandas", "Scikit-learn"],
-    "title": "2024 CO-Data Station (데이터과학논술대회)",
-    "description": "주어진 데이터셋을 분석하고 모델링 결과를 바탕으로 인사이트를 도출하여 본선에서 발표한 데이터 사이언스 대회.",
-    "is_awarded": true,
-    "award_title": "입상",
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "데이터 전처리부터 모델 학습, 인사이트 도출, 그리고 본선 발표까지의 전 과정을 팀원들과 협력하여 수행하며 실전 데이터 분석 역량을 키웠습니다.",
-    "images": ["/proofs/CO_data 발표자료(본선)_MUD.pptx.pdf"],
-    "certificates": ["/proofs/co-data station 상장.pdf"]
-  },
-  {
-    "id": "6d8b1e4e-9d29-4e7a-b50a-42c15f9e2f46",
-    "year": 2024,
-    "term": "여름방학",
-    "category": "대회",
-    "roles": ["AI Engineer"],
-    "tech_stack": ["PyTorch", "CNN", "Computer Vision"],
-    "title": "ASA 대회 - 딥페이크 판별 AI",
-    "description": "딥페이크 이미지를 판별하는 딥러닝 모델을 개발하여 참가한 AI 대회.",
-    "is_awarded": true,
-    "award_title": "수상",
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "딥페이크 탐지를 위한 CNN 기반 이미지 패턴 분석 모델을 설계하고, 대회 제출 기준에 맞춰 최적화하여 수상의 성과를 거두었습니다.",
-    "images": ["/proofs/ASA_딥페이크 판별 AI.pdf"],
-    "certificates": ["/proofs/ASA 대회 상장.jpg"]
-  },
-  {
-    "id": "7d8b1e4e-9d29-4e7a-b50a-42c15f9e2f47",
-    "year": 2024,
-    "term": "여름방학",
-    "category": "캠프",
-    "roles": ["AI Researcher"],
-    "tech_stack": ["Python", "Machine Learning"],
-    "title": "LG Aimers 캠프 (추계학술대회 발표)",
-    "description": "LG Aimers 캠프 참가 후, 연구 결과를 한국통신학회 추계학술대회에서 발표.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "LG Aimers 캠프의 일환으로 AI 모델 및 데이터 프로세싱 과정을 깊이 있게 연구하고, 그 결과물을 추계학술대회를 통해 발표하며 학술적 역량을 쌓았습니다.",
-    "images": [],
-    "certificates": ["/proofs/LG AI.pdf", "/proofs/CERTIFICATE.pdf"]
-  },
-  {
-    "id": "8d8b1e4e-9d29-4e7a-b50a-42c15f9e2f48",
-    "year": 2025,
-    "term": "1학기",
-    "category": "대회",
-    "roles": ["Backend Developer"],
-    "tech_stack": ["Google Cloud", "Firebase"],
-    "title": "Google Solution Challenge 2025 (APAC)",
-    "description": "Google Developer Groups 주관 APAC Solution Challenge 2025에 참가하여, AI 기반 사회 문제 해결 솔루션을 개발.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "APAC 지역 참가자들과 경쟁하며 지역 사회의 문제를 AI로 해결하는 솔루션을 개발했습니다. Google Cloud 기반 서비스 설계 역량을 쌓았습니다.",
-    "images": [],
-    "certificates": ["/proofs/솔루션챌린지 입상.png"]
-  },
-  {
-    "id": "9d8b1e4e-9d29-4e7a-b50a-42c15f9e2f49",
-    "year": 2024,
-    "term": "1학기",
-    "category": "대회",
-    "roles": ["Deep Learning Engineer"],
-    "tech_stack": ["PyTorch", "TensorFlow", "AIHub", "음성 처리"],
-    "title": "음성 기반 응급 신고 자동 분류 딥러닝 모델 (AICS 창업톤)",
-    "description": "위급상황 음성/음향 데이터(AIHub)를 활용하여 응급 신고를 자동 분류하는 딥러닝 아키텍처를 설계한 AICS 창업톤 프로젝트.",
-    "is_awarded": true,
-    "award_title": "우수상",
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "AIHub의 위급상황 음성/음향 데이터셋을 전처리하고, 딥러닝 모델을 설계하여 응급 신고 유형을 자동 분류하는 시스템을 구축해 우수상을 수상했습니다.",
-    "images": ["/proofs/음성 기반 응급 신고 자동 분류 딥러닝 모델 발표 자료.pdf"],
-    "certificates": ["/proofs/우수상(음성 기반 응급 신고 자동 분류 딥러닝 모델).pdf"]
-  },
-  {
-    "id": "ad8b1e4e-9d29-4e7a-b50a-42c15f9e2f50",
-    "year": 2025,
-    "term": "1학기",
-    "category": "대회",
-    "roles": ["AI Engineer", "Backend Developer"],
-    "tech_stack": ["PyTorch", "FastAPI"],
-    "title": "AICS 창업톤 L:AUNCH (이멀전시)",
-    "description": "AICS 창업톤 L:AUNCH에서 위급상황 음성 인식 AI 솔루션 'Emergency(이멀전시)'를 개발하여 참가.",
-    "is_awarded": true,
-    "award_title": "입상",
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "이전 창업톤에서의 경험을 발전시켜 더 정교한 음성 인식 AI 솔루션을 기획 및 구현했습니다.",
-    "images": ["/proofs/이멀전시.pdf"],
-    "certificates": ["/proofs/상.pdf"]
-  },
-  {
-    "id": "0d8b1e4e-9d29-4e7a-b50a-42c15f9e2f40",
-    "year": 2025,
-    "term": "2학기",
-    "category": "학회",
-    "roles": ["Researcher"],
-    "tech_stack": [],
-    "title": "정보처리학회 단기강좌 참가",
-    "description": "한국정보처리학회 주최 2025년 제2차 단기강좌에 등록 및 참가.",
-    "is_awarded": false,
-    "award_title": null,
-    "github_url": null,
-    "readme_content": null,
-    "reflection": "정보처리학회 단기강좌에 참가하여 최신 컴퓨터 과학 동향과 실무 기술을 학습했습니다.",
-    "images": [],
-    "certificates": ["/proofs/참가증명서_정보처리 학회-김건희.pdf"]
-  }
-]
+{
+  "positions": [
+    {
+      "year": 2021,
+      "items": [
+        { "role": "과대표", "org": "인공지능학부", "description": "신설 학과 첫 신입생, 과잠 제작 및 학과 동아리 개설 기틀 마련" }
+      ]
+    },
+    {
+      "year": 2024,
+      "items": [
+        { "role": "회장", "org": "ASA (인공지능혁신융합대학사업단 동아리)" },
+        { "role": "팀장", "org": "A.I.M (학과 동아리)" },
+        { "role": "동아리원", "org": "!deas (공모전 중앙동아리)" }
+      ]
+    },
+    {
+      "year": 2025,
+      "items": [
+        { "role": "Core Member", "org": "GDG (Google Developer Group)" },
+        { "role": "팀장", "org": "!deas (공모전 중앙동아리)" }
+      ]
+    }
+  ],
+  "activities": [
+    {
+      "id": "act-2021-gwadae",
+      "year": 2021,
+      "term": "1학기",
+      "category": "활동",
+      "roles": ["과대표"],
+      "tech_stack": [],
+      "title": "인공지능학부 과대표 활동",
+      "description": "2021년 신설 학과의 첫 신입생으로 입학하여 과대표직을 맡아 학과 자치 구조를 직접 구축. 학과 점퍼(과잠) 제작을 주도하고 학과 동아리 개설의 기틀을 마련.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "선배나 학생회 같은 기존의 체계가 전혀 없는 백지상태에서 과대직을 맡게 되었습니다. 수강신청 방법조차 모를 정도로 대학 행정에 대한 정보가 전무한 상황이었으나, 오히려 이를 기회로 삼아 학과 점퍼 제작을 주도하고 학과 동아리 개설의 기틀을 닦는 등 자치 구조를 직접 구축해 나갔습니다. 코로나19로 인해 외부 활동이 제한적인 시기였음에도 불구하고, 아무것도 없던 곳에서 하나씩 기반을 만들어가는 과정은 제 대학 생활을 무엇보다 의미 있고 보람차게 만들어준 소중한 경험이었습니다.",
+      "images": [],
+      "certificates": [],
+      "detail_sections": []
+    },
+    {
+      "id": "9d8b1e4e-9d29-4e7a-b50a-42c15f9e2f49",
+      "year": 2024,
+      "term": "1학기",
+      "category": "대회",
+      "roles": ["AI Engineer"],
+      "tech_stack": ["PyTorch", "TensorFlow", "AIHub", "음성 처리"],
+      "title": "음성 기반 응급 신고 자동 분류 딥러닝 모델 (AICS 창업톤)",
+      "description": "수업 시간 캡스톤 디자인으로 골든타임 관련 AI를 기획·개발한 뒤, 이를 보완하여 AICS 창업톤에 출전. AIHub의 위급상황 음성/음향 데이터를 활용하여 응급 신고를 자동 분류하는 딥러닝 아키텍처를 설계.",
+      "is_awarded": true,
+      "award_title": "우수상",
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "AIHub의 위급상황 음성/음향 데이터셋을 전처리하고, 딥러닝 모델을 설계하여 응급 신고 유형을 자동 분류하는 시스템을 구축해 우수상을 수상했습니다. 수업 캡스톤에서 출발한 아이디어를 대회 수준으로 발전시키는 과정에서 실전 경험을 크게 쌓을 수 있었습니다.",
+      "images": ["/proofs/음성 기반 응급 신고 자동 분류 딥러닝 모델 발표 자료.pdf"],
+      "certificates": ["/proofs/우수상(음성 기반 응급 신고 자동 분류 딥러닝 모델).pdf"],
+      "detail_sections": []
+    },
+    {
+      "id": "6d8b1e4e-9d29-4e7a-b50a-42c15f9e2f46",
+      "year": 2024,
+      "term": "여름방학",
+      "category": "대회",
+      "roles": ["AI Engineer"],
+      "tech_stack": ["PyTorch", "CNN", "Computer Vision"],
+      "title": "ASA 대회 - 딥페이크 판별 AI",
+      "description": "딥페이크 이미지를 판별하는 딥러닝 모델을 개발하여 참가한 AI 대회.",
+      "is_awarded": true,
+      "award_title": "수상",
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "딥페이크 탐지를 위한 CNN 기반 이미지 패턴 분석 모델을 설계하고, 대회 제출 기준에 맞춰 최적화하여 수상의 성과를 거두었습니다.",
+      "images": ["/proofs/ASA_딥페이크 판별 AI.pdf"],
+      "certificates": ["/proofs/ASA 대회 상장.jpg"],
+      "detail_sections": []
+    },
+    {
+      "id": "7d8b1e4e-9d29-4e7a-b50a-42c15f9e2f47",
+      "year": 2024,
+      "term": "여름방학",
+      "category": "캠프",
+      "roles": ["Researcher"],
+      "tech_stack": ["Python", "Machine Learning"],
+      "title": "LG Aimers 캠프 (추계학술대회 발표)",
+      "description": "LG Aimers 캠프 참가 후, 연구 결과를 한국통신학회 추계학술대회에서 발표.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "LG Aimers 캠프의 일환으로 AI 모델 및 데이터 프로세싱 과정을 깊이 있게 연구하고, 그 결과물을 추계학술대회를 통해 발표하며 학술적 역량을 쌓았습니다.",
+      "images": [],
+      "certificates": ["/proofs/LG AI.pdf", "/proofs/CERTIFICATE.pdf"],
+      "detail_sections": []
+    },
+    {
+      "id": "5d8b1e4e-9d29-4e7a-b50a-42c15f9e2f45",
+      "year": 2024,
+      "term": "2학기",
+      "category": "대회",
+      "roles": ["Data Analyst", "Presenter"],
+      "tech_stack": ["Python", "Pandas", "Scikit-learn"],
+      "title": "2024 CO-Data Station (데이터과학논술대회)",
+      "description": "주어진 데이터셋을 분석하고 모델링 결과를 바탕으로 인사이트를 도출하여 본선에서 발표한 데이터 사이언스 대회.",
+      "is_awarded": true,
+      "award_title": "입상",
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "데이터 전처리부터 모델 학습, 인사이트 도출, 그리고 본선 발표까지의 전 과정을 팀원들과 협력하여 수행하며 실전 데이터 분석 역량을 키웠습니다.",
+      "images": ["/proofs/CO_data 발표자료(본선)_MUD.pptx.pdf"],
+      "certificates": ["/proofs/co-data station 상장.pdf"],
+      "detail_sections": []
+    },
+    {
+      "id": "1d8b1e4e-9d29-4e7a-b50a-42c15f9e2f41",
+      "year": 2025,
+      "term": "겨울방학",
+      "category": "캠프",
+      "roles": ["Backend Engineer"],
+      "tech_stack": ["Kotlin", "Jetpack Compose", "FastAPI", "MySQL", "PyTorch", "Playwright", "Glide", "Retrofit2"],
+      "title": "몰입캠프 1주차 - 밈포티 (MemeForty)",
+      "description": "밈 콘텐츠를 자동으로 수집하고 출석체크, 3컷 만화 등의 기능을 제공하는 안드로이드 앱. Playwright 기반 크롤링과 ResNet50 AI 중복 제거 파이프라인을 포함한 풀스택 프로젝트.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": "https://github.com/junyi04/madcamp-week1",
+      "readme_content": null,
+      "reflection": "이렇게 짧은 시간을 가지고 개발한 것은 처음이어서 쉽지 않았습니다. 다른 대회에서 AI 개발이나 DB 구축, PM 역할들은 많이 해봤지만 이렇게 백엔드 부분만 맡아서 개발한 것은 처음이었어서 어려움이 좀 있었습니다. GitHub를 연결해서 계속 푸시하면서 개발을 해오지 않았어서 이번에 git push 관련 에러가 조금 있었는데 배울 수 있어서 좋았습니다.",
+      "images": [],
+      "certificates": [],
+      "detail_sections": [
+        {
+          "heading": "디자인 컨셉",
+          "content": "레트로 UI와 사이버펑크 감성의 색상을 사용하여 영포티(Young Forty) 감성을 그대로 재현. 트렌드에 민감하고 젊은 세대와의 소통을 원하는 영포티들을 위해 매일 자정 올라오는 최신 유행 밈을 제공.",
+          "images": ["/projects/memeforty/icon_1.webp"]
+        },
+        {
+          "heading": "온보딩 & 알림 설정",
+          "content": "앱 최초 실행 시 3단계 온보딩으로 매끄러운 진입을 유도하고, 알림 권한 설정 후 매일 자정 출석 체크 모달을 표시.",
+          "images": ["/projects/memeforty/image.png", "/projects/memeforty/image 1.png", "/projects/memeforty/image 2.png", "/projects/memeforty/image 3.png"]
+        },
+        {
+          "heading": "홈 화면 & 카테고리",
+          "content": "틱톡 크롤링 기반 밈 추천 Top 10을 매일 자정 업데이트. 춤, 챌린지, 음식, TTS 등 카테고리별 영상 제공. 보기/저장 기능으로 마음에 드는 영상 관리.",
+          "images": ["/projects/memeforty/image 6.png", "/projects/memeforty/image 7.png", "/projects/memeforty/image 9.png", "/projects/memeforty/image 10.png"]
+        },
+        {
+          "heading": "출석 체크 & 3컷 만화",
+          "content": "달력 및 연속 출석·누적 보상 뷰를 제공하고, 포인트로 3컷 만화를 열람할 수 있는 재미 요소 추가.",
+          "images": ["/projects/memeforty/image 13.png", "/projects/memeforty/image 15.png", "/projects/memeforty/image 16.png", "/projects/memeforty/image 17.png"]
+        }
+      ]
+    },
+    {
+      "id": "2d8b1e4e-9d29-4e7a-b50a-42c15f9e2f42",
+      "year": 2025,
+      "term": "겨울방학",
+      "category": "캠프",
+      "roles": ["AI Engineer", "Backend Engineer"],
+      "tech_stack": ["Vite", "React", "FastAPI", "Solidity", "Ethereum", "MetaMask", "Qwen2-VL", "LangChain", "Web3"],
+      "title": "몰입캠프 2주차 - 블록패스 (BlockPass)",
+      "description": "블록체인 기반 이용권 거래 서비스. 스마트 컨트랙트로 환불 규정을 코드로 고정하여, 사업자 파산 시에도 자동 환불이 실행되는 구조. OCR(Qwen2-VL 파인튜닝)로 종이 계약서 스캔 기능도 탑재.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": "https://github.com/AsyncNomad/blockpass-front",
+      "readme_content": null,
+      "reflection": "kcloud는 안쓰는 거다. AI는 api만 쓰자 (자체 학습X). OCR 자체는 처음 만들어 봤는데 글자 인식은 잘 되지만 이걸 AI가 맞는 영역을 찾아가는 건 아예 따로 학습이 필요해 보였는데 못해서 아쉬웠다. 스마트컨트랙트 아직도 이해 못함.",
+      "images": [],
+      "certificates": [],
+      "detail_sections": [
+        {
+          "heading": "문제 정의",
+          "content": "헬스장, 독서실 등 이용권을 판매하는 사업체가 파산하면 환불 규정은 더 이상 의미가 없어집니다. 법적 근거(규칙)는 존재하지만, 현실에서 반드시 실현되지는 않습니다.",
+          "images": ["/projects/blockpass/image.png"]
+        },
+        {
+          "heading": "솔루션: 블록체인 + 스마트 컨트랙트",
+          "content": "환불 조건을 Solidity 코드로 변환하여 블록체인에 배포. 한 번 배포된 스마트 컨트랙트는 누구도 수정할 수 없으며, 조건 충족 시 자동으로 환불이 실행됩니다.",
+          "images": ["/projects/blockpass/image 15.png"]
+        },
+        {
+          "heading": "회원가입 & 지갑 연동",
+          "content": "사업자/고객 선택 회원가입 후 MetaMask 앱과 연동하여 단 10초면 가상자산 지갑을 등록할 수 있습니다.",
+          "images": ["/projects/blockpass/image 1.png", "/projects/blockpass/image 7.png", "/projects/blockpass/image 8.png"]
+        },
+        {
+          "heading": "이용권 구매 & 파산 시 자동 환불",
+          "content": "사업자가 설정한 환불 규정이 스마트 컨트랙트로 자동 변환·배포되고, 고객이 이용권 구매 시 ETH로 결제. 사업체 파산 시 파산 신고 버튼만 누르면 스마트 컨트랙트가 즉시 환불을 실행합니다.",
+          "images": ["/projects/blockpass/image 10.png", "/projects/blockpass/image 11.png", "/projects/blockpass/image 12.png", "/projects/blockpass/image 13.png"]
+        }
+      ]
+    },
+    {
+      "id": "3d8b1e4e-9d29-4e7a-b50a-42c15f9e2f43",
+      "year": 2025,
+      "term": "겨울방학",
+      "category": "캠프",
+      "roles": ["Frontend Engineer", "Backend Engineer"],
+      "tech_stack": ["Next.js", "TypeScript", "Zustand", "Recharts", "FastAPI", "SQLAlchemy", "APScheduler", "JWT", "httpx", "Playwright", "Gemini API", "Docker", "Nginx", "Postgres"],
+      "title": "몰입캠프 3주차 - FITME",
+      "description": "최저가 추적과 AI 가상 피팅(VTON)을 결합한 쇼핑 최적화 서비스. 무신사 URL 등록으로 상품 가격 자동 수집·추이 차트 제공, AI 스타일 분석·추천, 2D 가상 착장 이미지 생성까지 지원.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": "https://github.com/logan0741/MadCamp_3week",
+      "readme_content": null,
+      "reflection": "Next.js와 FastAPI를 결합한 풀스택 아키텍처를 Docker Compose로 통합 배포했습니다. Playwright를 활용한 무신사 크롤링에서 httpx(빠름)→Playwright(안정) 2단계 폴백 전략을 적용하고, __NEXT_DATA__ 기반 추출로 DOM 의존을 최소화했습니다. Recharts 기반 가격 그래프, Gemini API 활용 스타일 분석 등 다양한 기술을 한 프로젝트에 녹여내며 기술적 폭을 넓힐 수 있었습니다.",
+      "images": [],
+      "certificates": [],
+      "detail_sections": [
+        {
+          "heading": "핵심 기능: 가격 추적 & 하이브리드 크롤링",
+          "content": "무신사 URL 등록 시 상품 정보·가격 자동 수집. 일 1회 가격 로그 저장, 최저/최고가 산출, 가격 추이 차트 제공. OneLink 공유 URL 자동 해석, __NEXT_DATA__ 기반 추출, httpx→Playwright 2단계 폴백 전략 적용.",
+          "images": ["/projects/fitme/image.png", "/projects/fitme/image 1.png", "/projects/fitme/image 2.png"]
+        },
+        {
+          "heading": "관심상품 & 가격 변동 추적",
+          "content": "무신사에서 원클릭으로 옷을 추가하고, 가격 변화를 확인한 뒤 저렴할 때 구매. 가상 피팅으로 옷을 입은 모습을 직접 확인할 수 있습니다.",
+          "images": ["/projects/fitme/image 4.png", "/projects/fitme/image 5.png", "/projects/fitme/image 6.png"]
+        },
+        {
+          "heading": "AI 스타일 분석 & 추천",
+          "content": "사용자 사진 업로드 시 퍼스널 컬러·스타일 평가 제공. 추천 아이템은 크롤링으로 즉시 DB화하여 관심 상품으로 연결.",
+          "images": ["/projects/fitme/image 7.png", "/projects/fitme/image 8.png"]
+        }
+      ]
+    },
+    {
+      "id": "4d8b1e4e-9d29-4e7a-b50a-42c15f9e2f44",
+      "year": 2025,
+      "term": "겨울방학",
+      "category": "캠프",
+      "roles": ["AI Engineer", "Backend Engineer"],
+      "tech_stack": ["Python", "JavaScript", "TypeScript", "CLAP", "x-Transformer", "Flask", "Node.js", "MongoDB", "React", "Vite", "Tailwind CSS"],
+      "title": "몰입캠프 4주차 - SoundRoutine",
+      "description": "일상의 소리들로 나만의 비트를 만드는 리듬 생성 서비스. CLAP + x-Transformer 기반 7단계 AI 파이프라인으로 입력 오디오를 분석하여 구조화된 리듬과 비트를 자동 생성.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": "https://github.com/donghee290/25w_madcamp_4w",
+      "readme_content": null,
+      "reflection": "소리를 전처리하는 과정에서 소리를 빼는 작업이 생각보다 어려웠다. GPU 서버 우회를 고정 IP 없이 해보는 과정이 쉽지 않았다. 4주간의 몰입캠프를 통해 기획부터 배포까지 전 과정을 경험할 수 있었다.",
+      "images": [],
+      "certificates": [],
+      "detail_sections": [
+        {
+          "heading": "프로젝트 개요",
+          "content": "여러 사물을 가지고 음악을 쌓아가는 영상에서 영감을 받아, 일상의 소리를 새로 발견하고 리듬의 재료로 사용해 음악으로 풀어내는 서비스. 당신의 하루가 하나의 리듬이 됩니다.",
+          "images": ["/projects/soundroutine/OnBoardingPage.png"]
+        },
+        {
+          "heading": "AI 파이프라인 (7단계)",
+          "content": "1) Preprocess: 드럼 스템 분리·온셋 탐지·중복 제거 2) Role Assignment: CLAP 모델로 5가지 역할(Core/Accent/Motion/Fill/Texture) 분류 3) Grid & Skeleton: BPM·Bar 기반 리듬 스켈레톤 구축 4) Transformer: Ultimate-Drums-Transformer로 비트 후보 생성·최적 선택 5) Note Generation: MIDI 출력 6) Event Editor: 사용자 편집 7) Render: WAV 렌더링·다중 포맷 변환",
+          "images": []
+        },
+        {
+          "heading": "BeatStudio",
+          "content": "소리 추가(파일·실시간 녹음), 자동 분류, 4/4박자 Bar 배치, TEMPO·STYLE·EXPORT FORMAT 설정, 비트 생성·수정·다운로드까지 원스톱으로 제공.",
+          "images": ["/projects/soundroutine/image 3.png", "/projects/soundroutine/image 4.png", "/projects/soundroutine/image 5.png"]
+        }
+      ]
+    },
+    {
+      "id": "8d8b1e4e-9d29-4e7a-b50a-42c15f9e2f48",
+      "year": 2025,
+      "term": "1학기",
+      "category": "대회",
+      "roles": ["Backend Engineer"],
+      "tech_stack": ["Google Cloud", "Firebase"],
+      "title": "Google Solution Challenge 2025 (APAC)",
+      "description": "Google Developer Groups 주관 APAC Solution Challenge 2025에 참가하여, AI 기반 사회 문제 해결 솔루션을 개발.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "APAC 지역 참가자들과 경쟁하며 지역 사회의 문제를 AI로 해결하는 솔루션을 개발했습니다. Google Cloud 기반 서비스 설계 역량을 쌓았습니다.",
+      "images": [],
+      "certificates": ["/proofs/솔루션챌린지 입상.png"],
+      "detail_sections": []
+    },
+    {
+      "id": "ad8b1e4e-9d29-4e7a-b50a-42c15f9e2f50",
+      "year": 2025,
+      "term": "1학기",
+      "category": "대회",
+      "roles": ["AI Engineer", "Backend Engineer"],
+      "tech_stack": ["PyTorch", "FastAPI"],
+      "title": "AICS 창업톤 L:AUNCH (이멀전시)",
+      "description": "AICS 창업톤 L:AUNCH에서 위급상황 음성 인식 AI 솔루션 'Emergency(이멀전시)'를 개발하여 참가.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "위급상황 음성 인식 AI 솔루션을 기획 및 구현하며 창업톤 경험을 쌓았습니다.",
+      "images": ["/proofs/이멀전시.pdf"],
+      "certificates": [],
+      "detail_sections": []
+    },
+    {
+      "id": "0d8b1e4e-9d29-4e7a-b50a-42c15f9e2f40",
+      "year": 2025,
+      "term": "2학기",
+      "category": "학회",
+      "roles": ["Researcher"],
+      "tech_stack": [],
+      "title": "정보처리학회 단기강좌 참가",
+      "description": "한국정보처리학회 주최 2025년 제2차 단기강좌에 등록 및 참가.",
+      "is_awarded": false,
+      "award_title": null,
+      "github_url": null,
+      "readme_content": null,
+      "reflection": "정보처리학회 단기강좌에 참가하여 최신 컴퓨터 과학 동향과 실무 기술을 학습했습니다.",
+      "images": [],
+      "certificates": ["/proofs/참가증명서_정보처리 학회-김건희.pdf"],
+      "detail_sections": []
+    }
+  ]
+}
