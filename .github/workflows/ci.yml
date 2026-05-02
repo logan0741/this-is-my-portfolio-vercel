@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+  docker-verify:
+    runs-on: ubuntu-latest
+    needs: test-build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t portfolio-render:ci .
+
+      - name: Run Docker container
+        run: |
+          docker run -d --name portfolio_ci \
+            -e PORT=10000 \
+            -p 10000:10000 \
+            portfolio-render:ci
+
+      - name: Check HTTP response
+        run: |
+          sleep 10
+          curl --retry 5 --retry-delay 3 --fail http://127.0.0.1:10000
+
+      - name: Cleanup
+        if: always()
+        run: docker rm -f portfolio_ci || true
